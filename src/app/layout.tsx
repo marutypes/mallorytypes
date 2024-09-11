@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-purple-500 to-indigo-500 min-h-screen text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-purple-500 to-indigo-500 grid min-h-screen text-white`}
       >
         <nav className="flex justify-end p-8">
           <ul className="flex space-x-8 text-lg">
@@ -41,7 +41,7 @@ export default function RootLayout({
           </ul>
         </nav>
 
-        <div className="grid grid-rows-[1fr_auto] min-h-screen">{children}</div>
+        <div>{children}</div>
 
         <footer className="flex flex-row justify-center p-8 space-x-6">
           <a
