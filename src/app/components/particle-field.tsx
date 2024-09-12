@@ -38,7 +38,7 @@ class Particle {
     this.maxSpeed = maxSpeed;
     this.waveAmplitude = waveAmplitude;
     this.waveFrequency = waveFrequency;
-    this.phase = Math.random() * Math.PI * 2; // Random phase for independent sine wave movement
+    this.phase = Math.random() * Math.PI * 2;
   }
 
   init(canvas: HTMLCanvasElement) {
