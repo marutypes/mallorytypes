@@ -8,7 +8,7 @@ import {
   GithubIcon,
 } from "./components/icons";
 import "./globals.css";
-import ParticleField from "./components/particlefield";
+import ParticleField from "./components/particle-field";
 
 export const metadata: Metadata = {
   title: "Mallory Types",
@@ -32,7 +32,7 @@ export default function RootLayout({
             waveAmplitude: 1,
             maxSize: 1,
           }}
-          className="absolute inset-0 w-screen h-screen -z-10 cursor-"
+          className="absolute inset-0 w-screen h-screen -z-10"
         />
         <header>
           <div className="flex flex-row w-full items-baseline justify-between sm:pl-6 pl-2 sm:pr-6">
@@ -41,21 +41,31 @@ export default function RootLayout({
               className="self-center hover:underline hover:text-indigo-300"
             >
               <MKeyIcon width={50} height={50}></MKeyIcon>
+              <span className="sr-only">Home</span>
             </Link>
             <nav className="flex justify-end p-8">
               <ul className="flex space-x-8 text-lg">
                 <li>
-                  <Link href="/projects" className="hover:underline">
+                  <Link
+                    href="/projects"
+                    className="hover:underline hover:text-indigo-300"
+                  >
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link href="/resume" className="hover:underline">
+                  <Link
+                    href="/resume"
+                    className="hover:underline hover:text-indigo-300"
+                  >
                     Resume
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:underline">
+                  <Link
+                    href="/contact"
+                    className="hover:underline hover:text-indigo-300"
+                  >
                     Contact
                   </Link>
                 </li>
@@ -67,15 +77,6 @@ export default function RootLayout({
         <div>{children}</div>
 
         <footer className="flex flex-row justify-center p-8 space-x-6 items-start">
-          <a
-            href="https://twitter.com/the_mallen"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline hover:text-indigo-300"
-          >
-            <TwitterIcon />
-            <span className="sr-only">Twitter</span>
-          </a>
           <a
             href="https://www.linkedin.com/in/mallory-allen/"
             target="_blank"
@@ -91,6 +92,15 @@ export default function RootLayout({
             className="hover:underline hover:shadow-sm hover:text-indigo-300"
           >
             <GithubIcon />
+          </a>
+          <a
+            href="https://twitter.com/the_mallen"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline hover:text-indigo-300"
+          >
+            <TwitterIcon />
+            <span className="sr-only">Twitter</span>
           </a>
         </footer>
       </body>

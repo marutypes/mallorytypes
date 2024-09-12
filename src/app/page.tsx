@@ -40,8 +40,8 @@ export default function Home() {
         <section className="flex justify-center mt-10 lg:mt-0 lg:ml-10 lg:flex-1">
           <div className="flex flex-col justify-center items-center border-t max-w-96 md:max-w-7xl lg:border-t-0 pt-8 lg:pt-0 lg:border-l-2 lg:pl-8 lg:rounded-sm">
             <p className="text-xl">
-              I am a passionate passionatre developer with over a decade of
-              professional experience in web development. My interests span
+              I am a passionate developer with over a decade of
+              professional experience in software development. My interests span
               across coding, game development, music, and building unique VR
               experiences. I&apos;m always looking to explore new ideas and flex
               my brain meats.
