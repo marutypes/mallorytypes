@@ -12,6 +12,21 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        gradient: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "25%": { backgroundPosition: "50% 100%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "75%": { backgroundPosition: "50% 0%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+      },
+      animation: {
+        "gradient-bg": "gradient 20s ease infinite",
+      },
+      backgroundSize: {
+        "size-200": "200% 200%",
+      },
     },
   },
   plugins: [],
