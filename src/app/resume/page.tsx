@@ -8,14 +8,14 @@ export default function ResumePage() {
       </h1>
       <div className="flex justify-center flex-wrap gap-4 mb-8">
         <a
-          href="/public/resume.docx"
+          href="/mallory-allen-resume-2024.docx"
           download
           className="px-6 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors"
         >
           Download .docx
         </a>
         <a
-          href="/public/resume.pdf"
+          href="/mallory-allen-resume-2024.pdf"
           download
           className="px-6 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors"
         >
@@ -24,6 +24,7 @@ export default function ResumePage() {
         <a
           href="https://docs.google.com/document/d/1sZGsB3JAUxj9So_FmTQzRueUDbD7EUMROQdhRKRhoUk/edit?usp=sharing"
           className="px-6 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors"
+          target="_blank"
         >
           Open in Google Docs
         </a>
