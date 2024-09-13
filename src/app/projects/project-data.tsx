@@ -31,6 +31,7 @@ export function getProjects(): Category[] {
           media: {
             type: "image",
             url: "/maru-arcade-splash.png",
+            hoverUrl: "/arcade-screenshot.png",
             height: 800,
             width: 600,
           },
@@ -56,6 +57,7 @@ export function getProjects(): Category[] {
           media: {
             type: "image",
             url: "/face-invaders-splash.jpg",
+            hoverUrl: "/face-invaders-hover.jpg",
             height: 1024,
             width: 1024,
           },
@@ -73,6 +75,7 @@ export function getProjects(): Category[] {
           media: {
             type: "image",
             url: "/catboy-gun-show-preview.png",
+            hoverUrl: "/catboy-gun-show-preview-anim.webp",
             height: 1582,
             width: 895,
           },
