@@ -1,6 +1,7 @@
 export interface Media {
   type: "audio" | "soundcloud" | "image";
   url: string;
+  hoverUrl?: string;
   width?: number;
   height?: number;
 }
@@ -42,6 +43,7 @@ export function getProjects(): Category[] {
           media: {
             type: "image",
             url: "/crystal-defenders-splash.png",
+            hoverUrl: "/crystal-defenders-preview-anim.webp",
             height: 1200,
             width: 900,
           },

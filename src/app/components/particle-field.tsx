@@ -28,7 +28,7 @@ class Particle {
     const {
       color = "#fff",
       maxSize = 1.5,
-      maxSpeed = 3,
+      maxSpeed = 1.5,
       waveAmplitude = 50,
       waveFrequency = 0.01,
     } = options;
