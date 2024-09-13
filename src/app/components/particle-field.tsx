@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 interface ParticleOptions {
   color?: string;
@@ -83,7 +83,8 @@ class Particle {
     this.vy *= 0.95;
 
     // Wave movement for natural animation
-    this.x += Math.sin(this.y * this.waveFrequency + this.phase) * this.waveAmplitude;
+    this.x +=
+      Math.sin(this.y * this.waveFrequency + this.phase) * this.waveAmplitude;
     this.y += this.speed;
 
     if (this.y > this.canvas.height) {
@@ -101,7 +102,13 @@ class Ripple {
   growSpeed: number;
   fadeSpeed: number;
 
-  constructor(x: number, y: number, startingRadius = 0.25, growSpeed = 0.1, fadeSpeed = 0.01) {
+  constructor(
+    x: number,
+    y: number,
+    startingRadius = 0.25,
+    growSpeed = 0.1,
+    fadeSpeed = 0.01
+  ) {
     this.x = x;
     this.y = y;
     this.radius = startingRadius;
@@ -140,9 +147,9 @@ export default function ParticleField({
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const entities = useRef<Particle[]>([]);
   const ripples = useRef<Ripple[]>([]);
-  
-  const mousePos = useRef<{ x: number; y: number } | null>(null);  // Change to useRef
-  const mouseDown = useRef(false);  // Change to useRef
+
+  const mousePos = useRef<{ x: number; y: number } | null>(null); // Change to useRef
+  const mouseDown = useRef(false); // Change to useRef
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -185,7 +192,9 @@ export default function ParticleField({
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles
-      entities.current.forEach((ent) => ent.update(mousePos.current, mouseDown.current));
+      entities.current.forEach((ent) =>
+        ent.update(mousePos.current, mouseDown.current)
+      );
       entities.current.forEach((ent) => ent.draw(ctx));
 
       // Update and draw ripples
