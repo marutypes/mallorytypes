@@ -26,7 +26,7 @@ export function getProjects(): Category[] {
           name: "Maru's Arcade",
           description:
             "A VRChat world featuring over 10 fully functional arcade cabinets, attracting over 500,000 visits and 27,000+ favorites. Developed 3D assets, designed gameplay experiences, created 3D models, and wrote networked games in C#.",
-          url: "https://vrchat.com/home/world/wrld_some_link_to_the_arcade",
+          url: "https://vrchat.com/home/launch?worldId=wrld_d29c4512-ad9c-4c39-9ca6-b6081e3af99d",
           media: {
             type: "image",
             url: "/maru-arcade-splash.png",
@@ -38,7 +38,7 @@ export function getProjects(): Category[] {
           name: "Crystal Defenders",
           description:
             "A co-operative VR tower defense game with over 600,000 visits and 35,000+ favorites. Designed and built the entire gameplay loop, developed assets and shaders, and scripted game mechanics in C# for Unity.",
-          url: "https://vrchat.com/home/launch?worldId=wrld_d2af6dab-c6fa-4752-b8c5-227addcc5b10s",
+          url: "https://vrchat.com/home/launch?worldId=wrld_d2af6dab-c6fa-4752-b8c5-227addcc5b10",
           media: {
             type: "image",
             url: "/crystal-defenders-splash.png",

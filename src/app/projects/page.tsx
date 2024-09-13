@@ -12,7 +12,7 @@ export default function ProjectsPage() {
         Projects
       </h1>
       <p className="text-lg text-center max-w-2xl mb-8">
-        Listed below are some of the side projects I’ve worked on. These range
+        Listed below are some of the side projects I&apos;ve worked on. These range
         from VR experiences to game development and music production.
       </p>
 

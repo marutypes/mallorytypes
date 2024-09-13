@@ -25,7 +25,7 @@ export default function Home() {
             I&apos;m <span className="font-bold">Mallory Allen, </span>
           </h1>
           <p className="text-xl md:text-2xl mb-4 md:mb-8">
-            A software developer and general creative.
+            a software developer and general creative.
           </p>
           <div>
             <a
