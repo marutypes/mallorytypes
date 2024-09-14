@@ -37,11 +37,11 @@ export default function ResumePage() {
               Senior Software Developer with over a decade of experience.
               Experience working at top tech companies like Shopify and
               Coursera. Skilled in building and scaling web applications using
-              React, GraphQL, Typescript, Node.js, and more. A broad
-              range of front and back-end expertise, consistently delivering
-              high-quality solutions. Experienced in leading projects, mentoring
-              teams, and thriving in fast-paced environments. Passionate about
-              creating impactful, user-centric experiences.
+              React, GraphQL, Typescript, Node.js, and more. A broad range of
+              front and back-end expertise, consistently delivering high-quality
+              solutions. Experienced in leading projects, mentoring teams, and
+              thriving in fast-paced environments. Passionate about creating
+              impactful, user-centric experiences.
             </p>
           </section>
 
@@ -120,8 +120,15 @@ export default function ResumePage() {
                   integrating a universal React application with a legacy stack.
                 </li>
                 <li>
-                  Developed apps and libraries while mentoring junior team
-                  members, fostering growth and providing technical guidance.
+                  Mentored junior team members, fostering growth and providing technical guidance.
+                </li>
+                <li>
+                  Improved performance of a complex web application by reducing
+                  load times by over 60%.
+                </li>
+                <li>
+                  Lead a project to display performance regression information
+                  on PRs to prevent shipping negative changes.
                 </li>
                 <li>
                   Created and advocated for exceptional UX experiences and best

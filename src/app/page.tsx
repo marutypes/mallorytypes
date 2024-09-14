@@ -3,7 +3,7 @@ import { merriweather } from "./fonts";
 
 export default function Home() {
   return (
-    <main className="flex flex-col flex-wrap ml-4 mr-4 md:ml-8 md:mr-8 justify-between md:justify-center items-center">
+    <main className="flex flex-col flex-wrap pl-4 pr-4 md:pl-8 md:pr-8 justify-between md:justify-center items-center">
       <div
         className="rounded-full overflow-hidden mb-5 md:mb-28 mb- self-center shadow-lg"
         style={{ width: 200, height: 200 }}
