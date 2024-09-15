@@ -44,7 +44,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-lg border-2 border-white p-8 rounded-lg shadow-md bg-slate-900 bg-opacity-50"
+      className="w-full max-w-xl border-2 border-white p-8 rounded-lg shadow-md bg-slate-900 bg-opacity-50"
     >
       <div className="mb-4">
         <label htmlFor="email" className="block text-lg font-medium mb-2">

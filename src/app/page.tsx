@@ -17,7 +17,7 @@ export default function Home() {
         />
       </div>
       <div className="flex flex-row flex-wrap md:max-w-7xl justify-center">
-        <section className="flex flex-col items-left text-left justify-start">
+        <section className="flex flex-col items-left text-left justify-start lg:pr-10">
           <h2 className={`text-xl md:text-3xl mb-4 ${merriweather.className}`}>
             Hello!
           </h2>
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="flex justify-center mt-10 lg:mt-0 lg:ml-10 lg:flex-1">
+        <section className="flex justify-center mt-10 lg:mt-0 lg:flex-1">
           <div className="flex flex-col justify-center items-center border-t max-w-96 md:max-w-7xl lg:border-t-0 pt-8 lg:pt-0 lg:border-l-2 lg:pl-8 lg:rounded-sm">
             <p className="text-xl">
               I am a passionate developer with over a decade of
