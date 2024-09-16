@@ -1,4 +1,3 @@
-// eslint-disable  @typescript-eslint/no-unused-vars
 import Input from "./input";
 
 export type EntityEffector = (entity: Entity) => void;
@@ -12,6 +11,8 @@ export default abstract class Entity {
     this.x = x;
     this.y = y;
   }
+
+  /* eslint-disable  @typescript-eslint/no-unused-vars */
   init(_context: { ctx: CanvasRenderingContext2D }) {}
   draw(_context: {
     ctx: CanvasRenderingContext2D;
@@ -27,6 +28,7 @@ export default abstract class Entity {
     addEntity: EntityEffector;
     destroyEntity: EntityEffector;
   }) {}
+  /* eslint-enable  @typescript-eslint/no-unused-vars */
 
   destroy() {
     this.destroyed = true;

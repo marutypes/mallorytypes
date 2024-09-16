@@ -5,6 +5,7 @@ import React, {
   useRef,
   createContext,
   useContext,
+  useCallback,
   useState,
 } from "react";
 import Entity, { EntityEffector } from "./engine/entity";
@@ -40,15 +41,18 @@ export default function CanvasScene({
   const input = useRef(new Input());
   const lastFrameTime = useRef(performance.now());
 
-  const addEntity = (entity: Entity) => {
-    entities.current.push(entity);
-    if (canvasReady) {
-      const canvasContext = canvasRef.current!.getContext("2d");
-      entity.init({
-        ctx: canvasContext!,
-      });
-    }
-  };
+  const addEntity = useCallback(
+    (entity: Entity) => {
+      entities.current.push(entity);
+      if (canvasReady) {
+        const canvasContext = canvasRef.current!.getContext("2d");
+        entity.init({
+          ctx: canvasContext!,
+        });
+      }
+    },
+    [canvasReady]
+  );
 
   const destroyEntity = (entity: Entity) => {
     entity.destroy();
@@ -124,7 +128,7 @@ export default function CanvasScene({
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [fillContainer]);
+  }, [addEntity, fillContainer]);
 
   return (
     <CanvasSceneContext.Provider value={{ addEntity, destroyEntity }}>
