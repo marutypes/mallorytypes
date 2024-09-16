@@ -55,6 +55,10 @@ export default function ResumePage() {
             <li>Mentoring</li>
             <li>Version Control</li>
             <li>Project Management</li>
+            <li>Game development with unity/godot (C#)</li>
+            <li>Shader development with Shaderlab</li>
+            <li>Build tool development with Rust</li>
+            <li>Working proficiency in French</li>
           </ul>
         </section>
 
@@ -63,7 +67,7 @@ export default function ResumePage() {
 
           <div className="mt-4">
             <h3 className="font-semibold">Self Employed - Remote</h3>
-            <p className="text-sm text-gray-600">December 2023 - Current</p>
+            <p className="text-sm text-gray-100">December 2023 - Current</p>
             <p className="mt-2">VR Asset Developer</p>
             <ul className="list-disc list-inside">
               <li>
@@ -86,7 +90,7 @@ export default function ResumePage() {
 
           <div className="mt-4">
             <h3 className="font-semibold">Coursera - Remote</h3>
-            <p className="text-sm text-gray-600">August 2022 - March 2023</p>
+            <p className="text-sm text-gray-100">August 2022 - March 2023</p>
             <p className="mt-2">Senior Software Developer</p>
             <ul className="list-disc list-inside">
               <li>
@@ -106,12 +110,12 @@ export default function ResumePage() {
 
           <div className="mt-4 w-full">
             <h3 className="font-semibold">Shopify - Ottawa, ON</h3>
-            <p className="text-sm text-gray-600">October 2015 - August 2022</p>
+            <p className="text-sm text-gray-100">October 2015 - August 2022</p>
             <p className="mt-2">Staff Developer</p>
             <ul className="list-disc list-inside">
               <li>
                 Helped build and maintain front-end platform technologies,
-                integrating a universal React application with a legacy stack.
+                integrating a React application with a legacy stack.
               </li>
               <li>
                 Mentored junior team members, fostering growth and providing
@@ -139,14 +143,33 @@ export default function ResumePage() {
               </li>
             </ul>
           </div>
+
+          <div className="mt-4 w-full">
+            <h3 className="font-semibold">I-Sight - Ottawa, ON</h3>
+            <p className="text-sm text-gray-100">May 2015 - August 2015</p>
+            <p className="mt-2">Junior Software Developer</p>
+            <ul className="list-disc list-inside">
+              <li>
+                Worked with project teams to deliver case management platforms
+                for clients such as HP and Walmart.
+              </li>
+              <li>Created and maintained Node.js microservices.</li>
+              <li>Built frontend applications using Backbone.js.</li>
+              <li>Administered and interacted with PostgreSQL databases.</li>
+              <li>
+                Developed code generation tools to accelerate the creation of
+                new forms.
+              </li>
+            </ul>
+          </div>
         </section>
 
         <section className="mb-8">
           <h2 className="text-xl font-semibold">Education</h2>
           <div className="mt-2">
             <p className="font-semibold">Algonquin College - Ottawa, ON</p>
-            <p className="text-sm text-gray-600">2014</p>
-            <p>College Diploma Computer Programming</p>
+            <p className="text-sm text-gray-100">Winter 2014</p>
+            <p className="mt-4">College Diploma Computer Programming</p>
             <p className="italic">
               Graduation Dean&apos;s List, Winter, 2014 (3.72 GPA)
             </p>
