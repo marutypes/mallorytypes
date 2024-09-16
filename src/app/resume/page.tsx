@@ -58,7 +58,6 @@ export default function ResumePage() {
             <li>Game development with unity/godot (C#)</li>
             <li>Shader development with Shaderlab</li>
             <li>Build tool development with Rust</li>
-            <li>Working proficiency in French</li>
           </ul>
         </section>
 
@@ -72,18 +71,16 @@ export default function ResumePage() {
             <ul className="list-disc list-inside">
               <li>
                 Created, marketed, and sold prefab assets on online marketplaces
-                aimed at the social VR platform VRChat.
+                aimed at the social VR platform VRChat
               </li>
               <li>
                 Wrote scripts in C# using a subset of Unity features supported
-                by the platform.
+                by the platform
               </li>
-              <li>
-                Created 2D and 3D art using Blender, Substance, and Unity.
-              </li>
+              <li>Created 2D and 3D art using Blender, Substance, and Unity</li>
               <li>
                 Wrote custom shaders using Unity&apos;s ShaderLab and Amplify
-                Shader Editor.
+                Shader Editor
               </li>
             </ul>
           </div>
@@ -94,17 +91,17 @@ export default function ResumePage() {
             <p className="mt-2">Senior Software Developer</p>
             <ul className="list-disc list-inside">
               <li>
-                Developed frontend features with React, GraphQL, and Typescript.
+                Developed frontend features with React, GraphQL, and Typescript
               </li>
               <li>
                 Worked with teams to integrate components smoothly into existing
-                systems.
+                systems
               </li>
               <li>
                 Managed project timelines to deliver high-quality code on
-                schedule.
+                schedule
               </li>
-              <li>Reviewed code to maintain standards and improve quality.</li>
+              <li>Reviewed code to maintain standards and improve quality</li>
             </ul>
           </div>
 
@@ -115,31 +112,31 @@ export default function ResumePage() {
             <ul className="list-disc list-inside">
               <li>
                 Helped build and maintain front-end platform technologies,
-                integrating a React application with a legacy stack.
+                integrating a React application with a legacy stack
               </li>
               <li>
                 Mentored junior team members, fostering growth and providing
-                technical guidance.
+                technical guidance
               </li>
               <li>
                 Improved performance of a complex web application by reducing
-                load times by over 60%.
+                load times by over 60%
               </li>
               <li>
                 Lead a project to display performance regression information on
-                PRs to prevent shipping negative changes.
+                PRs to prevent shipping negative changes
               </li>
               <li>
                 Created and advocated for exceptional UX experiences and best
-                practices in frontend technologies.
+                practices in frontend technologies
               </li>
               <li>
                 Enhanced software functionality by identifying and resolving
-                complex issues.
+                complex issues
               </li>
               <li>
                 Maintained comprehensive documentation and facilitated knowledge
-                sharing across teams.
+                sharing across teams
               </li>
             </ul>
           </div>
@@ -151,14 +148,14 @@ export default function ResumePage() {
             <ul className="list-disc list-inside">
               <li>
                 Worked with project teams to deliver case management platforms
-                for clients such as HP and Walmart.
+                for clients such as HP and Walmart
               </li>
-              <li>Created and maintained Node.js microservices.</li>
-              <li>Built frontend applications using Backbone.js.</li>
-              <li>Administered and interacted with PostgreSQL databases.</li>
+              <li>Created and maintained Node.js microservices</li>
+              <li>Built frontend applications using Backbone.js</li>
+              <li>Administered and interacted with PostgreSQL databases</li>
               <li>
                 Developed code generation tools to accelerate the creation of
-                new forms.
+                new forms
               </li>
             </ul>
           </div>
