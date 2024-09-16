@@ -36,6 +36,7 @@ export default function CanvasScene({
   fillContainer?: boolean;
 }) {
   const [canvasReady, setCanvasReady] = useState(false);
+  const [pageVisible, setPageVisible] = useState(true);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const entities = useRef<Entity[]>([]);
   const input = useRef(new Input());
@@ -72,6 +73,14 @@ export default function CanvasScene({
         : window.innerHeight;
     };
 
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "hidden") {
+        setPageVisible(false);
+      } else if (document.visibilityState === "visible") {
+        setPageVisible(true);
+      }
+    };
+
     const handleMouseMove = (event: MouseEvent) => {
       input.current.setMousePos(event.clientX, event.clientY);
     };
@@ -90,6 +99,7 @@ export default function CanvasScene({
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     const animate = () => {
       const now = performance.now();
@@ -131,7 +141,9 @@ export default function CanvasScene({
   }, [addEntity, fillContainer]);
 
   return (
-    <CanvasSceneContext.Provider value={{ addEntity, destroyEntity }}>
+    <CanvasSceneContext.Provider
+      value={{ addEntity, destroyEntity }}
+    >
       <canvas
         className={className}
         ref={(canvas) => {
@@ -139,7 +151,7 @@ export default function CanvasScene({
           setCanvasReady(true);
         }}
       />
-      {canvasRef.current && children}
+      {canvasReady && pageVisible && children}
     </CanvasSceneContext.Provider>
   );
 }
