@@ -19,7 +19,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       className="bg-slate-900 bg-opacity-50 rounded-lg shadow-md grid grid-rows-[auto_1fr_auto] h-full transition-all duration-300"
     >
       <div className="p-6 h-52 mb-6 grid grid-rows-[auto_1fr_auto]">
-        <h3 className="text-2xl font-bold mb-4">{project.name}</h3>
+        <h3 className="text-xl sm:text-2xl font-bold mb-4">{project.name}</h3>
         <p className="text-gray-300">{project.description}</p>
       </div>
 

@@ -2,8 +2,8 @@ import { merriweather } from "@/app/fonts";
 
 export default function ResumePage() {
   return (
-    <main className="w-full flex flex-col items-center justify-start p-6 mt-10">
-      <h1 className={`text-3xl font-bold mb-8 ${merriweather.className}`}>
+    <main className="w-full flex flex-col items-center justify-start p-2 sm:p-6 mt-2 sm:mt-10">
+      <h1 className={`text-2xl sm:text-3xl font-bold mb-8 ${merriweather.className}`}>
         Mallory Allen - Resume
       </h1>
       <div className="flex justify-center flex-wrap gap-4 mb-8">

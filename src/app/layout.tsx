@@ -39,7 +39,7 @@ export default function RootLayout({
               <MKeyIcon width={50} height={50}></MKeyIcon>
               <span className="sr-only">Home</span>
             </Link>
-            <nav className="flex justify-end p-8">
+            <nav className="flex justify-end p-4 sm:p-8">
               <ul className="flex space-x-8 text-lg">
                 <li>
                   <Link
@@ -72,7 +72,7 @@ export default function RootLayout({
 
         <div>{children}</div>
 
-        <footer className="flex flex-row justify-center p-8 space-x-6 items-start">
+        <footer className="flex flex-row justify-center sm:p-8 space-x-6 items-start">
           <a
             href="https://www.linkedin.com/in/mallory-allen/"
             target="_blank"

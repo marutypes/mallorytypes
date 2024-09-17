@@ -67,12 +67,11 @@ export default function CanvasScene({
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      const newWidth = window.innerWidth;
+      const newWidth = document.documentElement.clientWidth;
       const newHeight = fillContainer
-        ? document.body.scrollHeight
-        : window.innerHeight;
+        ? document.documentElement.scrollHeight
+        : document.documentElement.clientHeight;
 
-      // Only resize if dimensions have changed
       if (canvas.width !== newWidth || canvas.height !== newHeight) {
         canvas.width = newWidth;
         canvas.height = newHeight;

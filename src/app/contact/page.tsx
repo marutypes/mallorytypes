@@ -3,8 +3,8 @@ import ContactForm from "./contact-form";
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col items-center justify-start p-6">
-      <h1 className={`text-3xl font-bold mb-8 ${merriweather.className}`}>
+    <div className="flex flex-col items-center justify-start p-2 sm:p-6">
+      <h1 className={`text-2xl sm:text-3xl font-bold mb-8 ${merriweather.className}`}>
         Contact Me
       </h1>
       <p className="text-lg mb-4 text-center">
