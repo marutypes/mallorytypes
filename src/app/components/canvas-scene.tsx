@@ -67,17 +67,28 @@ export default function CanvasScene({
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = fillContainer
+      const newWidth = window.innerWidth;
+      const newHeight = fillContainer
         ? document.body.scrollHeight
         : window.innerHeight;
+
+      // Only resize if dimensions have changed
+      if (canvas.width !== newWidth || canvas.height !== newHeight) {
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+      }
     };
 
+    // We need to hook into the visibility events to prevent particles from behaving weirdly when you tab in and out of the page.
     const handleVisibilityChange = () => {
       if (document.visibilityState === "hidden") {
         setPageVisible(false);
       } else if (document.visibilityState === "visible") {
         setPageVisible(true);
+        // Reset lastFrameTime to avoid large deltaTime
+        lastFrameTime.current = performance.now();
+        // Resize canvas on visibility change
+        resizeCanvas();
       }
     };
 
@@ -109,7 +120,6 @@ export default function CanvasScene({
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Update and draw all entities
       entities.current.forEach((ent) =>
         ent.update({
           time,
@@ -137,13 +147,12 @@ export default function CanvasScene({
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [addEntity, fillContainer]);
 
   return (
-    <CanvasSceneContext.Provider
-      value={{ addEntity, destroyEntity }}
-    >
+    <CanvasSceneContext.Provider value={{ addEntity, destroyEntity }}>
       <canvas
         className={className}
         ref={(canvas) => {

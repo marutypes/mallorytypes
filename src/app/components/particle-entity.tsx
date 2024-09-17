@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
+import { useCanvasScene } from "./canvas-scene";
 import Entity from "./engine/entity";
 import Input from "./engine/input";
-import { useCanvasScene } from "./canvas-scene";
+import Color from "./engine/color";
 import { Time } from "./engine/time";
 
 export default function ParticleField(props: ParticleOptions) {
@@ -13,13 +14,13 @@ export default function ParticleField(props: ParticleOptions) {
     const particle = new Particle(props);
     addEntity(particle);
     return () => destroyEntity(particle);
-  }, [JSON.stringify(props)]);
+  }, [addEntity, destroyEntity, props]);
 
   return null;
 }
 
 interface ParticleOptions {
-  color?: string;
+  color?: Color;
   minSize?: number;
   maxSize?: number;
   gravity?: number;
@@ -28,6 +29,8 @@ interface ParticleOptions {
   swayRandomness?: number;
   mouseChaseSpeed?: number;
   maxSpeed?: number;
+  maxOpacity?: number;
+  fadeInDuration?: number;
 }
 
 class Particle extends Entity {
@@ -38,7 +41,10 @@ class Particle extends Entity {
   mouseChaseSpeed: number;
   phase: number;
   maxSpeed: number;
-  color: string;
+  color: Color;
+  fadeInDuration: number;
+  maxOpacity: number;
+  elapsedFadeTime: number = 0;
   vx: number = 0;
   vy: number = 0;
   canvasWidth: number = 0;
@@ -48,7 +54,7 @@ class Particle extends Entity {
     super(Math.random(), Math.random());
 
     const {
-      color = "rgba(255, 255, 255, 255)",
+      color = new Color(),
       minSize = 0.5,
       maxSize = 1.5,
       gravity = 9,
@@ -57,8 +63,11 @@ class Particle extends Entity {
       mouseChaseSpeed = 80,
       swayRandomness = 0.5,
       maxSpeed = 100,
+      fadeInDuration = 2.5,
+      maxOpacity = 0.8,
     } = options;
 
+    color.a = 0;
     this.color = color;
     this.radius = Math.random() * (maxSize - minSize) + minSize;
     this.gravity = gravity;
@@ -66,6 +75,8 @@ class Particle extends Entity {
     this.swayFrequency = swayFrequency * (swayRandomness + Math.random());
     this.mouseChaseSpeed = mouseChaseSpeed;
     this.maxSpeed = maxSpeed;
+    this.fadeInDuration = fadeInDuration;
+    this.maxOpacity = maxOpacity;
     this.phase = Math.random() * Math.PI * 2;
   }
 
@@ -83,19 +94,32 @@ class Particle extends Entity {
     if (!ctx) return;
 
     ctx.beginPath();
+    ctx.strokeStyle = this.color.ToCSSRGBAString();
+    ctx.fillStyle = this.color.ToCSSRGBAString();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = this.color;
     ctx.fill();
   }
 
   update({ time, input }: { time: Time; input: Input }) {
+    // Handle fade-in effect
+    if (this.color.a < this.maxOpacity) {
+      this.elapsedFadeTime += time.deltaTime;
+      this.color.a = Math.min(
+        this.maxOpacity,
+        this.elapsedFadeTime / this.fadeInDuration
+      );
+    }
+
+    // Apply gravity
     this.vy += this.gravity * time.deltaTime;
 
+    // Sway back and forth in a sine wave pattern
     this.x +=
       Math.sin(this.y * this.swayFrequency + this.phase) *
       this.swayAmplitude *
       time.deltaTime;
 
+    // Move towards the mouse if the button is held down
     if (input.mousePos && input.mouseDown) {
       const dx = input.mousePos.x - this.x;
       const dy = input.mousePos.y - this.y;
@@ -133,11 +157,5 @@ class Particle extends Entity {
 }
 
 function clamp(num: number, lower: number, upper: number) {
-  if (num < lower) {
-    return lower;
-  }
-  if (num > upper) {
-    return upper;
-  }
-  return num;
+  return Math.max(lower, Math.min(num, upper));
 }
