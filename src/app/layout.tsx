@@ -82,7 +82,7 @@ export default function RootLayout({
             <LinkedInIcon />
           </a>
           <a
-            href="https://twitter.com/the_mallen"
+            href="https://github.com/marutypes"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline hover:shadow-sm hover:text-indigo-300"
